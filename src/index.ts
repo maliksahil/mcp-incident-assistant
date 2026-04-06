@@ -13,3 +13,19 @@ const MOCK_ALERTS = [
     { id: "ALRT-001", service: "auth-api", status: "CRITICAL", message: "Memory leak detected" },
     { id: "ALRT-002", service: "payment-gateway", status: "WARNING", message: "Latency > 500ms" },
 ];
+
+// Register our resource
+server.registerResource(
+  "active-alerts",
+  "resource://incidents/active",
+  { 
+    description: "Provides a list of currently active system alerts", 
+    mimeType: "application/json" 
+  },
+  async (uri) => ({
+    contents: [{
+      uri: uri.href,
+      text: JSON.stringify(MOCK_ALERTS, null, 2),
+    }],
+  })
+);
