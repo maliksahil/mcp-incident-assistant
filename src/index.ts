@@ -60,3 +60,15 @@ server.registerTool(
     };
   }
 );
+
+// The actual startup logic
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error("IncidentResponsePro is standing by.");
+}
+
+main().catch((err) => {
+  console.error("Fatal error during startup:", err);
+  process.exit(1);
+});
