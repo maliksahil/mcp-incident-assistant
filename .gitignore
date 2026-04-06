@@ -1,0 +1,49 @@
+# 1. Build Output
+# Usually, we don't track the compiled JS as it's generated from TS
+dist/
+out/
+build/
+lib/
+*.tsbuildinfo
+
+# 2. Dependencies
+# Never track node_modules; it's massive and platform-specific
+node_modules/
+jspm_packages/
+
+# 3. Logs and Runtime Data
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 4. Environment and Secrets
+# Protect your API keys and local config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 5. Testing
+coverage/
+.nyc_output
+
+# 6. IDE / Editor Folders
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 7. OS Generated Files
+.DS_Store
+Thumbs.db
